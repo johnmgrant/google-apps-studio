@@ -1,0 +1,24 @@
+{
+  /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "display": "Strict Type Checking",
+  "compilerOptions": {
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Projects */
+    "composite": true
+  }
+}

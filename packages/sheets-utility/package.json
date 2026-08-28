@@ -1,0 +1,36 @@
+{
+  "name": "@johnmgrant/sheets-utility",
+  "version": "1.0.0",
+  "description": "Node.js utility for running Google Sheets operations from fitness-ingestion functions",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "auth": "jiti src/auth.ts",
+    "example:list": "jiti examples/list-sheets.ts",
+    "example:read": "jiti examples/read-strong-data.ts",
+    "example:transpose": "jiti examples/transpose-workouts.ts",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.ts' 'examples/**/*.ts'",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check 'src/**/*.ts' 'examples/**/*.ts'"
+  },
+  "keywords": [
+    "google-sheets",
+    "googleapis",
+    "fitness",
+    "workout-tracking"
+  ],
+  "author": "John Mitchell-Grant",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "google-auth-library": "^10.5.0",
+    "googleapis": "^176.0.0",
+    "open": "^11.0.1"
+  },
+  "devDependencies": {
+    "@johnmgrant/tools__tsconfig": "workspace:^",
+    "@types/node": "^26.4.0",
+    "jiti": "^2.7.0",
+    "typescript": "^7.0.2"
+  }
+}

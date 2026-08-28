@@ -1,0 +1,16 @@
+version: '0.2'
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - IMPORTRANGE
+  - LOSEIT
+  - REGEXEXTRACT
+  - STACKDRIVER
+  - templatization
+ignoreWords:
+  - jmmg
+  - lort
+  - appsscript
+  - aspnetapp
+import: []

@@ -1,0 +1,36 @@
+{
+  "name": "@johnmgrant/google-apps-scripts__google-docs-toolkit",
+  "version": "1.0.0",
+  "description": "Google Docs utilities for tree formatting and substitution workflows.",
+  "scripts": {
+    "clasp": "clasp",
+    "prebuild": "rm -rf declarations",
+    "build": "vite build",
+    "prepush": "pnpm build",
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "deploy": "clasp deploy",
+    "lint": "eslint 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check 'src/**/*.ts'"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.4.0",
+    "@johnmgrant/tools__tsconfig": "workspace:^",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/google-apps-script": "^2.0.12",
+    "glob": "^13.0.6",
+    "jiti": "^2.7.0",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-checker": "^0.14.5"
+  },
+  "keywords": [
+    "google-apps-script",
+    "google-docs",
+    "typescript"
+  ],
+  "author": "John Mitchell-Grant",
+  "license": "Apache-2.0"
+}

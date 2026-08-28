@@ -1,0 +1,33 @@
+{
+  "Finish Line Block": {
+    "prefix": "finishline",
+    "body": [
+      "Finish Line:",
+      "- ${1:Outcome}",
+      "- ${2:Verification}",
+      "- ${3:Share/Publish}"
+    ],
+    "description": "Insert a Finish Line definition"
+  },
+  "Decision Rule Block": {
+    "prefix": "decisionrule",
+    "body": [
+      "Decision Rule:",
+      "Proceed if:",
+      "- ${1:Condition A}",
+      "- ${2:Condition B}",
+      "",
+      "Stop if:",
+      "- ${3:Condition C}"
+    ],
+    "description": "Insert an Explore decision rule"
+  },
+  "Parking Lot Block": {
+    "prefix": "parkinglot",
+    "body": [
+      "Parking Lot (capture only):",
+      "- ${1:Idea}"
+    ],
+    "description": "Insert a Parking Lot capture section"
+  }
+}

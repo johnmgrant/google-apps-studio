@@ -1,0 +1,32 @@
+{
+  "name": "@johnmgrant/tools__doc-utility",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "doc-utility": "./dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@johnmgrant/tools__tsconfig": "workspace:^",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

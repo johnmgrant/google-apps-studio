@@ -1,0 +1,18 @@
+{
+  /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "display": "ESLint",
+  /* Generic all purpose tsconfig for ESLint to use */
+  "extends": "./tsconfig.base",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": [
+    "**/*.json",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.d.ts"
+  ]
+}

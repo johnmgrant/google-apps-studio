@@ -1,0 +1,211 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Git Commit Push: autosave (unstaged)",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "git add . && git commit -m \"build: autosave\" && git push"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Git Commit Push: autosave (staged + unstaged)",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "git add . && git commit -m \"build: autosave\" && git add . && git commit -m \"build: autosave --again\" && git push"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Commit: czg in root and subproject",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "czg ${input:czgArgs} && cd projects/templatization-lor && czg ${input:czgArgs}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Universities: Check Git History",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "jiti tools/dev-utils/check-universities-history.ts"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: fitness-ingestion",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "pnpm --filter ./projects/fitness-ingestion run test"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test: fitness-ingestion templatization",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "pnpm --filter ./projects/fitness-ingestion run test:templatization"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: projects",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "pnpm run build:projects"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Stage root + templatization-lor (script)",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "scripts/git-stage-root-subproject.sh"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Workflow: LOR Update (script)",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "scripts/lor-update-workflow.sh"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Stage root + templatization-lor",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "git add -A && git -C projects/templatization-lor add -A"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Workflow: LOR Update + Test + Build + Commit (czg)",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Universities: Check Git History",
+        "Test: fitness-ingestion",
+        "Test: fitness-ingestion templatization",
+        "Build: projects",
+        "Git: Stage root + templatization-lor",
+        "Commit: pnpm czg preset (root + subproject)"
+      ]
+    },
+    {
+      "label": "Commit: czg preset (root + subproject)",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "czg --emoji --scope 'templatization-lor' --breaking && cd projects/templatization-lor && czg --emoji --scope 'templatization-lor' --breaking"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Commit: pnpm czg in root and subproject",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "pnpm czg ${input:czgArgs} && cd projects/templatization-lor && pnpm czg ${input:czgArgs}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Commit: pnpm czg preset (root + subproject)",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "pnpm czg --emoji --scope 'templatization-lor' --breaking && cd projects/templatization-lor && pnpm czg --emoji --scope 'templatization-lor' --breaking"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Commit: pnpm czg preset (script)",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-lc", "scripts/czg-preset-root-subproject.sh"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+
+    {
+      "label": "Open Parking Lot",
+      "type": "shell",
+      "command": "code -r docs/parking-lot.md",
+      "problemMatcher": []
+    },
+    {
+      "label": "Create Deliver issue (opens browser)",
+      "type": "shell",
+      "command": "./scripts/new-issue.sh deliver",
+      "problemMatcher": []
+    },
+    {
+      "label": "Create Explore issue (opens browser)",
+      "type": "shell",
+      "command": "./scripts/new-issue.sh explore",
+      "problemMatcher": []
+    },
+    {
+      "label": "Node: Clean Reinstall Packages",
+      "detail": "Removes the node modules and lock file and reinstalls packages and rebuilds typescript",
+      "problemMatcher": [],
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "command": "rm -rf node_modules/ pnpm-lock.yaml; pnpm i; pnpm -r exec tsc --noEmit"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "czgArgs",
+      "type": "promptString",
+      "description": "czg options to reuse in both runs (e.g. --emoji --scope \"templatization-lor\" --breaking)",
+      "default": ""
+    }
+  ]
+}

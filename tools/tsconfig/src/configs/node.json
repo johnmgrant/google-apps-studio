@@ -1,0 +1,16 @@
+{
+  /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "display": "Node",
+  "compilerOptions": {
+    "composite": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2022"],
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}

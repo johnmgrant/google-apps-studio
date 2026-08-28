@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "christian-kohler.npm-intellisense",
+    "MylesMurphy.prettify-ts",
+    "streetsidesoftware.code-spell-checker",
+    "rohit-gohri.format-code-action",
+    "remcohaszing.schemastore",
+    "alefragnani.project-manager",
+    "GitHub.vscode-pull-request-github",
+    "EditorConfig.EditorConfig",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "codezombiech.gitignore",
+    "vscode-icons-team.vscode-icons"
+  ]
+}

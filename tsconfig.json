@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "composite": false,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "references": [
+    {"path": "./tsconfig.test.json"},
+    {"path": "./packages/sheets-utility"},
+    {"path": "./packages/fitness-models"},
+    {"path": "./projects/templatization-lor"}
+  ],
+  // The root project itself only covers repo-level config files + ambient types.
+  "include": ["typings", "**/*.config.*"],
+  "exclude": [
+    "**/.cache",
+    "**/.temp",
+    "**/.turbo",
+    "**/dist",
+    "**/out",
+    "**/build",
+    "**/node_modules"
+  ]
+}

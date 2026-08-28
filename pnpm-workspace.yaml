@@ -1,0 +1,12 @@
+packages:
+  - 'projects/*'
+  - 'packages/*'
+  - 'tools/tsconfig'
+  - 'tools/submodule-converter'
+  - 'libraries/*'
+
+allowBuilds:
+  esbuild: true
+
+onlyBuiltDependencies:
+  - esbuild

@@ -1,0 +1,11 @@
+[
+  "**/.cache",
+  "**/.git",
+  "**/.turbo",
+  "**/.DS_Store",
+  "**/dist",
+  "**/bundles/**",
+  "**/node_modules/**",
+  "**/build-types/**",
+  "build"
+]

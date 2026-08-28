@@ -1,0 +1,47 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "cacheDir": ".cache/turbo",
+  "globalDependencies": ["package.json", "pnpm-lock.yaml", "tsconfig.*"],
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "prepare": {
+      "cache": false,
+      "dependsOn": ["build-tool:*", "build-package:*", "build-library:*"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**", "**/tsconfig.tsbuildinfo"]
+    },
+    "maintain": {
+      "cache": false,
+      "dependsOn": ["maintain:*"]
+    },
+    "dev": {"cache": false, "persistent": true},
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "inputs": ["src/**/*.ts", "tsconfig.json", "package.json"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "inputs": [
+        "src/**/*.ts",
+        "eslint.config.ts",
+        ".eslintrc*",
+        "package.json"
+      ]
+    },
+    "format:check": {
+      "outputs": [],
+      "inputs": [
+        "src/**/*.ts",
+        ".prettierrc.json",
+        ".prettierignore",
+        "package.json"
+      ]
+    },
+    "test": {"outputs": ["coverage/**"]},
+    "clean": {"cache": false}
+  }
+}

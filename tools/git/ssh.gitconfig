@@ -1,0 +1,6 @@
+[url "ssh://git@"]
+	insteadOf = https://
+
+[push]
+	gpgSign = false
+	autoSetupRemote = true

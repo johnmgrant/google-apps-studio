@@ -1,0 +1,37 @@
+{
+  "name": "@johnmgrant/tools__tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./node": "./dist/node.json",
+    "./base": "./dist/base.json",
+    "./eslint": "./dist/eslint.json",
+    "./test": "./dist/test.json",
+    "./project": "./dist/project.json",
+    "./strict-type-checking": "./dist/strict-type-checking.json"
+  },
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf node_modules .turbo dist",
+    "typecheck": "tsc --noEmit",
+    "prepublish": "pnpm build",
+    "lint": "eslint 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-dts": "^5.0.3",
+    "vite-plugin-static-copy": "^4.1.1"
+  }
+}

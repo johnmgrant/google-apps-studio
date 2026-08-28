@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Husky pre-push: ensure tests/build pass
+printf "[husky] Run templatization tests...\n"
+pnpm --filter ./projects/fitness-ingestion run test:templatization || exit 1
+
+printf "[husky] Tip: if you haven't autosaved, consider VS Code autosave tasks before push.\n"

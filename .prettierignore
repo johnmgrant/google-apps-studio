@@ -1,0 +1,13 @@
+**/node_modules/**
+.editorconfig
+.prettierignore
+.deployignore
+.next
+.yarn
+.npmrc
+**/.husky
+**/.git/**
+**/.git*
+**/yarn.lock
+**/package-lock.json
+public/**/*.js

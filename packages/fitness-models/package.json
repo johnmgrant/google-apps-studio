@@ -1,0 +1,35 @@
+{
+  "name": "@johnmgrant/fitness-models",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  ".": {
+    "default": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
+  "./package.json": "dist/package.json",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "clean": "rm -rf node_modules .turbo dist",
+    "typecheck": "tsc --noEmit",
+    "prepublish": "pnpm build",
+    "lint": "eslint 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'"
+  },
+  "keywords": [],
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "typescript": "^7.0.2"
+  },
+  "author": "John Mitchell-Grant",
+  "license": "Apache-2.0"
+}

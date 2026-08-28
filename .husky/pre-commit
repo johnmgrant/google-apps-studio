@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Husky pre-commit: run checks and remind autosave
+printf "[husky] Check universities history...\n"
+jiti tools/dev-utils/check-universities-history.ts || true
+
+printf "[husky] Run templatization tests...\n"
+pnpm --filter ./projects/fitness-ingestion run test:templatization || exit 1
+
+printf "[husky] Build all projects...\n"
+pnpm run build:projects || exit 1
+
+printf "[husky] Reminder: after this commit, use VS Code autosave tasks: \n - Git Commit Push: autosave (unstaged)\n - Git Commit Push: autosave (staged + unstaged)\n"

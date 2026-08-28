@@ -1,0 +1,39 @@
+{
+  "name": "@johnmgrant/tools__submodule-converter",
+  "version": "1.0.0",
+  "description": "Convert workspace projects to git submodules",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "convert-to-submodule": "./dist/cli.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo dist",
+    "lint": "eslint 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "chalk": "^6.0.0",
+    "commander": "^15.0.0",
+    "ora": "^9.4.1",
+    "prompts": "^2.4.2",
+    "simple-git": "^3.36.0"
+  },
+  "devDependencies": {
+    "@johnmgrant/tools__tsconfig": "workspace:^",
+    "@types/node": "^26.4.0",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@johnmgrant/tools__tsconfig/node",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es2022",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src/**/*", "examples/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

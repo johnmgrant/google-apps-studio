@@ -1,0 +1,19 @@
+[core]
+	shell = /bin/zsh
+	editor = code --wait
+
+[url "ssh://git@"]
+	insteadOf = https://
+
+[push]
+	gpgSign = false
+	autoSetupRemote = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[alias]
+	prunelocal = !git branch --merged develop | grep -vE \"^\\*|^main$\" | xargs -n 1 git branch -d

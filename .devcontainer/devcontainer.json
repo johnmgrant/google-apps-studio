@@ -1,0 +1,91 @@
+{
+  "name": "Google Apps Script Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "lts"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Core Development
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+
+        // TypeScript & JavaScript
+        "MylesMurphy.prettify-ts",
+        "christian-kohler.npm-intellisense",
+        "streetsidesoftware.code-spell-checker",
+        "rohit-gohri.format-code-action",
+
+        // Git & GitHub
+        "GitHub.vscode-pull-request-github",
+        "codezombiech.gitignore",
+        "eamodio.gitlens",
+
+        // Google Apps Script Specific
+        "remcohaszing.schemastore",
+
+        // AI & Productivity
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+
+        // Mobile/Tablet Optimization
+        "ms-vscode.vscode-speech",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode.remote-server",
+
+        // UI & Navigation
+        "alefragnani.project-manager",
+        "vscode-icons-team.vscode-icons",
+        "usernamehw.errorlens",
+        "oderwat.indent-rainbow",
+
+        // Code Quality
+        // "SonarSource.sonarlint-vscode",
+        "wix.vscode-import-cost"
+      ],
+      "settings": {
+        "editor.rulers": [100],
+        "workbench.editor.enablePreview": true,
+        "explorer.confirmDelete": false,
+        "explorer.confirmDragAndDrop": false,
+        // Mobile/Tablet Optimizations
+        "editor.fontSize": 14,
+        "editor.lineHeight": 1.6,
+        "editor.minimap.enabled": false,
+        "workbench.tree.indent": 20,
+        "editor.suggest.showStatusBar": true,
+        "editor.hover.sticky": true,
+        // iPhone-specific improvements
+        "editor.selectionHighlight": true,
+        "editor.occurrencesHighlight": "off",
+        "editor.copyWithSyntaxHighlighting": false,
+        "editor.multiCursorModifier": "ctrlCmd",
+        // "editor.quickSuggestions": {
+        //   "other": true,
+        //   "comments": false,
+        //   "strings": true
+        // },
+        "editor.acceptSuggestionOnCommitCharacter": true,
+        "editor.snippetSuggestions": "top",
+        "editor.wordBasedSuggestions": "allDocuments",
+        "editor.renderLineHighlight": "all",
+        "workbench.list.openMode": "doubleClick",
+        "workbench.editor.highlightModifiedTabs": true
+      }
+    }
+  },
+  "postCreateCommand": "pnpm install || echo 'Remember to run: \\'npx clasp login\\' or \\'npx clasp login --no-localhost\\' to authenticate with Google!'",
+  "remoteUser": "node"
+}
