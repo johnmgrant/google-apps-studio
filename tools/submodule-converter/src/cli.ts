@@ -20,7 +20,7 @@ interface CliOptions {
 
 async function getDefaultOrg(workspaceRoot: string): Promise<string> {
   try {
-    const simpleGit = (await import('simple-git')).default;
+    const {simpleGit} = await import('simple-git');
     const git = simpleGit(workspaceRoot);
     const remotes = await git.getRemotes(true);
     const origin = remotes.find((r) => r.name === 'origin');

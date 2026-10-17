@@ -1,6 +1,6 @@
 import {existsSync} from 'fs';
 import {join} from 'path';
-import simpleGit, {SimpleGit} from 'simple-git';
+import {simpleGit, type SimpleGit} from 'simple-git';
 
 export class GitService {
   private git: SimpleGit;

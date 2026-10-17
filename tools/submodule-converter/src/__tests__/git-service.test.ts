@@ -17,7 +17,7 @@ vi.mock('simple-git', () => {
   };
 
   return {
-    default: vi.fn(() => mockGit),
+    simpleGit: vi.fn(() => mockGit),
   };
 });
 
@@ -34,7 +34,7 @@ describe('GitService', () => {
 
   beforeEach(async () => {
     vi.clearAllMocks();
-    const simpleGit = (await import('simple-git')).default;
+    const {simpleGit} = await import('simple-git');
     service = new GitService('/workspace', 'projects/test-project');
     mockGit = simpleGit() as unknown as MockGit;
   });
