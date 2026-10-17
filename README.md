@@ -89,6 +89,15 @@ pnpm push
 
 4. **Test** your script in the Apps Script editor or bound spreadsheet/document
 
+## Portfolio maintenance
+
+The repository has two local agent workflows in `.agents/skills/`:
+
+- [Changelog maintainer](.agents/skills/changelog-maintainer/SKILL.md) drafts release notes from staged changes for review before updating [CHANGELOG.md](CHANGELOG.md).
+- [Dependency maintenance](.agents/skills/dependency-maintenance/SKILL.md) guides targeted pnpm updates and runs typecheck and lint after an update.
+
+These workflows were adapted from `.ai/` for this monorepo. They do not require `.ai/` at runtime.
+
 ## GitHub Codespaces
 
 This repository is configured for GitHub Codespaces. Click the "Code" button and select "Create codespace on main" to start developing in the cloud with all dependencies pre-installed.
