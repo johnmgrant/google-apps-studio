@@ -1,0 +1,21 @@
+name: Setup toolchain
+description: >-
+  pnpm, Node and the dependency install shared by the CI jobs. Assumes the
+  repository is already checked out — a composite action cannot run before the
+  checkout that makes it available.
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v6
+
+    # `cache: pnpm` keys the store on the lockfile hash, so both jobs resolve
+    # the same key and whichever finishes first populates it for the other.
+    - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      with:
+        node-version-file: .nvmrc
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile

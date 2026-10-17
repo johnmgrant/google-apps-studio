@@ -11,46 +11,17 @@ on:
       - develop
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   ci:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.26.0
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Setup Clasp authentication
-        run: |
-          echo "${{ secrets.CLASPRC }}" > ~/.clasprc.json
-        if: ${{ secrets.CLASPRC != '' }}
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
 
       - name: Typecheck
         run: pnpm run typecheck
@@ -60,6 +31,9 @@ jobs:
 
       - name: Format check
         run: pnpm run format:check
+
+      - name: Tests
+        run: pnpm run test
 
       - name: Build
         run: pnpm run build
