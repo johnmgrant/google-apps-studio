@@ -7,6 +7,8 @@ jiti tools/dev-utils/check-universities-history.ts || true
 printf "[husky] Run templatization tests...\n"
 pnpm --filter ./projects/fitness-ingestion run test:templatization || exit 1
 
+npx turbo lint format:check test
+
 printf "[husky] Build all projects...\n"
 pnpm run build:projects || exit 1
 
