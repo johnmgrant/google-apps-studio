@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { GitHubService } from '../github-service';
+import {beforeEach, describe, expect, it, vi} from 'vitest';
+import {GitHubService} from '../github-service';
 
 // Mock Octokit
 vi.mock('@octokit/rest', () => {
