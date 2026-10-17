@@ -1,5 +1,6 @@
 import {defineConfig} from 'vite';
 import {resolve} from 'path';
+import {builtinModules} from 'node:module';
 
 export default defineConfig({
   build: {
@@ -19,6 +20,7 @@ export default defineConfig({
         'ora',
         'prompts',
         'simple-git',
+        ...builtinModules,
         /^node:.*/,
       ],
     },
