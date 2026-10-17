@@ -22,18 +22,18 @@
   },
   "dependencies": {
     "@octokit/rest": "^22.0.1",
-    "chalk": "^6.0.0",
+    "chalk": "^6.0.1",
     "commander": "^15.0.0",
     "ora": "^9.4.1",
     "prompts": "^2.4.2",
-    "simple-git": "^3.36.0"
+    "simple-git": "^4.0.2"
   },
   "devDependencies": {
     "@johnmgrant/tools__tsconfig": "workspace:^",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.6.5",
     "@types/prompts": "^2.4.9",
     "typescript": "^7.0.2",
-    "vite": "^8.2.2",
-    "vitest": "^4.1.11"
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
   }
 }

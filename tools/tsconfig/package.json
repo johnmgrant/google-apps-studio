@@ -28,10 +28,10 @@
     "format:check": "prettier --check 'src/**/*.ts'"
   },
   "devDependencies": {
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.6.5",
     "typescript": "^7.0.2",
-    "vite": "^8.2.2",
-    "vite-plugin-dts": "^5.0.3",
+    "vite": "^8.3.4",
+    "vite-plugin-dts": "^5.1.2",
     "vite-plugin-static-copy": "^4.1.1"
   }
 }
