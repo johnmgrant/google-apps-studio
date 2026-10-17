@@ -58,3 +58,6 @@ declarations/
 
 .gitignore
 !/.gitignore
+
+# temporarily
+.ai
